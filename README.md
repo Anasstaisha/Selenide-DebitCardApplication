@@ -1,6 +1,9 @@
+[![Build status](https://ci.appveyor.com/api/projects/status/n37y0kkpkn6irr0d?svg=true)](https://ci.appveyor.com/project/Anasstaisha/selenide-uitesting)
+
+
 # Задача №1: заказ карты
 
-Вам необходимо автоматизировать тестирование формы заказа карты:
+Необходимо автоматизировать тестирование формы заказа карты:
 
 ![image](https://github.com/netology-code/aqa-homeworks/raw/master/web/pic/order.png)
 
