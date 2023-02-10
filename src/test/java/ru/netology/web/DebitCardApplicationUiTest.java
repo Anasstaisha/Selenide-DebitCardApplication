@@ -17,7 +17,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldSendFormIfAllCondition() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия Мисюрова");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -27,7 +26,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldSendFormIfName() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -37,7 +35,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfNameWithEnglishKeyboardLayout() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Anastassiya Misyurova");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -47,7 +44,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfNameWithЁ() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Матрёна Иванова");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -57,7 +53,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfNameWithNumbers() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анас1асия");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -67,7 +62,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfPhoneLonger() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия Мисюрова");
         $("[data-test-id=phone] input").val("+791665566555");
         $("[data-test-id=agreement]").click();
@@ -77,7 +71,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfPhoneFormatWrong() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия Мисюрова");
         $("[data-test-id=phone] input").val("+7(916)655-66-55");
         $("[data-test-id=agreement]").click();
@@ -87,7 +80,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfFieldsNotFilled() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("");
         $("[data-test-id=phone] input").val("");
         $("[data-test-id=agreement]").click();
@@ -97,7 +89,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfPhoneNotFilled() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия Мисюрова");
         $("[data-test-id=phone] input").val("");
         $("[data-test-id=agreement]").click();
@@ -107,7 +98,6 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfNameNotFilled() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[data-test-id=agreement]").click();
@@ -117,10 +107,9 @@ public class DebitCardApplicationUiTest {
 
     @Test
     void shouldNotSendFormIfAgreementNotGiven() {
-        SelenideElement form = $("[id=root]");
         $("[data-test-id=name] input").val("Анастасия Мисюрова");
         $("[data-test-id=phone] input").val("+79166556655");
         $("[type=\"button\"]").click();
-        $("[data-test-id=agreement]").shouldHave(exactText(("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй")));
+        $("[data-test-id=agreement].input_invalid").shouldHave(exactText(("Я соглашаюсь с условиями обработки и использования моих персональных данных и разрешаю сделать запрос в бюро кредитных историй")));
     }
 }
