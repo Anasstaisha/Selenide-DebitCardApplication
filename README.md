@@ -1,4 +1,4 @@
-[![Build status](https://ci.appveyor.com/api/projects/status/n37y0kkpkn6irr0d?svg=true)](https://ci.appveyor.com/project/Anasstaisha/selenide-uitesting)
+[![Build status](https://ci.appveyor.com/api/projects/status/479jl4kwax8v32gv?svg=true)](https://ci.appveyor.com/project/Anasstaisha/selenide-debitcardapplication)
 
 
 # Задача №1: заказ карты
